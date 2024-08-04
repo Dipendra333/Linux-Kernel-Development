@@ -1,0 +1,2 @@
+
+ojb+m = current.o

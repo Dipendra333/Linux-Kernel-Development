@@ -1,15 +1,14 @@
 #include<linux/init.h>
 #include<linux/module.h>
 
+#define pr_fmt(fmt) "%s:%s(): " fmt, KBUILD_MODNAME, __func__
 // Module Parameters
 
 static char *name;
 module_param(name,charp,0660);
-MODULE_PARAM_DESC(name,"Name of the user.");
 
 static int age;
 module_param(age,int,0660);
-MODULE_PARAM_DESC(age,"Age of the user");
 
 static int __init hello_world_init(void)
 {
