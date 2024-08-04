@@ -8,12 +8,14 @@
 static void show_current(void)
 {
  pr_info("Process Detail:\n"
-    " name : %s  \n"
-    " PID  : %6d \n"
-    " TGID : %6d \n"  
-    " State: %c  \n",
-    current->comm, task_pid_nr(current), task_tgid_nr(current), task_state_to_char(current)
-    // current->comm, current->pid, current->tgid,current->__state
+    " name          : %s  \n"
+    " PID           : %6d \n"
+    " TGID          : %6d \n"  
+    " State         : %c  \n"
+    " Current       : 0x%pK(0x%px) \n"
+    " Start of stack: 0x%pK(0x%px) \n",
+    current->comm, task_pid_nr(current), task_tgid_nr(current), task_state_to_char(current),current,current,current->stack,current->stack
+    // current->comm, current->pid, current->tgid,current->__state,current,current->stack,current->stack
  );
 }
 
